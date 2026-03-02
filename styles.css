@@ -54,16 +54,19 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* 1. Loading Spinner */
+/* 1. Loading Spinner (.spinner) */
 .spinner {
+    /* REQUIRED: Animation property */
+    animation: spin 1s linear infinite;
+    
+    /* Styling for the spinner look */
     border: 4px solid rgba(0, 0, 0, 0.1);
     border-left-color: #3498db;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     margin: 20px auto;
-    /* Required animation property */
-    animation: spin 1s linear infinite;
+    /* NOTE: display: none is NOT here. JS handles visibility via .hidden class */
 }
 
 @keyframes spin {
@@ -71,8 +74,9 @@ button:hover {
     100% { transform: rotate(360deg); }
 }
 
-/* 2. Country Card */
+/* 2. Country Card (.country-card) */
 .country-card {
+    /* REQUIRED: Visible styling */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -92,10 +96,10 @@ button:hover {
     margin-top: 10px;
 }
 
-/* 3. Border Grid */
+/* 3. Border Grid (.border-grid) */
 .border-grid {
+    /* REQUIRED: Uses Grid */
     display: grid;
-    /* Responsive grid layout */
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 15px;
     margin-bottom: 2rem;
@@ -117,8 +121,9 @@ button:hover {
     margin-bottom: 5px;
 }
 
-/* 4. Error Styling */
+/* 4. Error Styling (.error) */
 .error {
+    /* REQUIRED: Distinct styling */
     color: #d9534f;
     background-color: #f2dede;
     border: 1px solid #ebccd1;
@@ -126,9 +131,10 @@ button:hover {
     border-radius: 4px;
     text-align: center;
     margin-bottom: 1rem;
+    /* NOTE: display: none is NOT here. JS handles visibility via .hidden class */
 }
 
-/* 5. Hidden State */
+/* 5. Hidden State (Required class) */
 .hidden {
     display: none;
 }
